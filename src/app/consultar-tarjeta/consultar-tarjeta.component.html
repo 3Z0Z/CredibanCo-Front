@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Consultar Tarjeta</h2>
+    <div class="flex-container">
+    <form class="form" (submit)="consultarTarjeta()">
+      <h3>Request</h3>
+      <div>
+        <label for="pan">PAN:</label>
+        <input type="number" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
+      </div>
+      <button type="submit">Consultar Tarjeta</button>
+    </form>
+
+    <form class="form">
+      <h3>Response</h3>
+      <div>
+        <label for="pan">PAN:</label>
+        <input type="text" id="pan" [(ngModel)]="response.pan" name="pan" [disabled]="true">
+      </div>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="response.nombre" name="nombre" [disabled]="true">
+      </div>
+      <div>
+        <label for="apellidoPaterno">Apellido paterno:</label>
+        <input type="text" id="apellidoPaterno" [(ngModel)]="response.apellidoPaterno" name="apellidoPaterno" [disabled]="true">
+      </div>
+      <div>
+        <label for="apellidoMaterno">Apellido materno:</label>
+        <input type="text" id="apellidoMaterno" [(ngModel)]="response.apellidoMaterno" name="apellidoMaterno" [disabled]="true">
+      </div>
+      <div>
+        <label for="cedula">Cédula:</label>
+        <input type="number" id="cedula" [(ngModel)]="response.cedula" name="cedula" [disabled]="true">
+      </div>
+      <div>
+        <label for="telefono">Teléfono:</label>
+        <input type="number" id="telefono" [(ngModel)]="response.telefono" name="telefono" [disabled]="true">
+      </div>
+      <div>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" [(ngModel)]="response.estado" name="estado" [disabled]="true">
+      </div>
+    </form>
+  </div>
+</div>

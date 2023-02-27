@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Eliminar Tarjeta</h2>
+    <div class="flex-container">
+    <form class="form" (submit)="eliminarTarjeta()">
+      <h3>Request</h3>
+      <div>
+        <label for="pan">PAN:</label>
+        <input type="number" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
+      </div>
+      <div>
+        <label for="numValidacion">Número de Validación:</label>
+        <input type="number" id="numValidacion" [(ngModel)]="request.numValidacion" name="numValidacion" [ngClass]="{'invalid':request.numValidacion&&(request.numValidacion.toString().length<1||request.numValidacion.toString().length>100)}" required>
+      </div>
+      <div>
+        <label for="apelpanConfirmlidoPaterno">Confirmar PAN:</label>
+        <input type="number" id="panConfirm" [(ngModel)]="request.panConfirm" name="panConfirm" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
+      </div>
+      <button type="submit">Eliminar Tarjeta</button>
+    </form>
+
+    <form class="form">
+      <h3>Response</h3>
+      <div>
+        <label for="codigo">Codigo:</label>
+        <input type="text" id="codigo" [(ngModel)]="response.codigo" name="codigo" [disabled]="true">
+      </div>
+      <div>
+        <label for="mensaje">Mensaje:</label>
+        <input type="text" id="mensaje" [(ngModel)]="response.mensaje" name="mensaje" [disabled]="true">
+      </div>
+    </form>
+  </div>
+</div>

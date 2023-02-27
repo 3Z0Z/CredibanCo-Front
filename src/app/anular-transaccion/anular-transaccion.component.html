@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Anular Transacción</h2>
+  <div class="flex-container">
+  <form class="form" (submit)="anularTransaccion()">
+    <h3>Request</h3>
+    <div>
+      <label for="pan">PAN:</label>
+      <input type="number" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
+    </div>
+    <div>
+      <label for="numReferencia">Número de referencia:</label>
+      <input type="number" id="numReferencia" [(ngModel)]="request.numReferencia" name="numReferencia" [ngClass]="{'invalid':request.numReferencia&&(request.numReferencia.toString().length<1||request.numReferencia.toString().length>6)}" required>
+    </div>
+    <div>
+      <label for="totalCompra">Total Compra:</label>
+      <input type="number" id="totalCompra" [(ngModel)]="request.totalCompra" name="totalCompra" required>
+    </div>
+    <button type="submit">Anular Transacción</button>
+  </form>
+
+  <form class="form">
+    <h3>Response</h3>
+    <div>
+      <label for="numReferencia">Número de referencia:</label>
+      <input type="number" id="numReferencia" [(ngModel)]="response.numReferencia" name="numReferencia" [disabled]="true">
+    </div>
+    <div>
+      <label for="codigo">Codigo:</label>
+      <input type="text" id="codigo" [(ngModel)]="response.codigo" name="codigo" [disabled]="true">
+    </div>
+    <div>
+      <label for="mensaje">Mensaje:</label>
+      <input type="text" id="mensaje" [(ngModel)]="response.mensaje" name="mensaje" [disabled]="true">
+    </div>
+  </form>
+  </div>
+</div>

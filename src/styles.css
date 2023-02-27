@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+ul {
+    padding:0;
+    list-style: none;
+    margin: 0;
+}
+
+.invalid {
+    border-color: red;
+    border-width: 0.3rem;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+h2{
+    font-size: 5rem;
+    text-decoration: underline;
+}
+h3{
+    font-size: 3.5rem;
+}
+.flex-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.form > div{
+    margin: 1rem;
+}
+.form label{
+    margin-right: 0.5rem;
+}

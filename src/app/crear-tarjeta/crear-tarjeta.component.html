@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Crear Tarjeta</h2>
+  <div class="flex-container">
+  <form class="form" (submit)="crearTarjeta()">
+    <h3>Request</h3>
+    <div>
+      <label for="pan">PAN:</label>
+      <input type="number" id="pan" [(ngModel)]="tarjeta.pan" name="pan" [ngClass]="{'invalid':tarjeta.pan&&(tarjeta.pan.toString().length<16||tarjeta.pan.toString().length>19)}" required>
+    </div>
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" [(ngModel)]="tarjeta.nombre" name="nombre" required>
+    </div>
+    <div>
+      <label for="apellidoPaterno">Apellido Paterno:</label>
+      <input type="text" id="apellidoPaterno" [(ngModel)]="tarjeta.apellidoPaterno" name="apellidoPaterno" required>
+    </div>
+    <div>
+      <label for="apellidoMaterno">Apellido Materno:</label>
+      <input type="text" id="apellidoMaterno" [(ngModel)]="tarjeta.apellidoMaterno" name="apellidoMaterno" required>
+    </div>
+    <div>
+      <label for="cedula">Cédula:</label>
+      <input type="number" id="cedula" [(ngModel)]="tarjeta.cedula" name="cedula" [ngClass]="{'invalid':tarjeta.cedula&&(tarjeta.cedula.toString().length<10||tarjeta.cedula.toString().length>15)}" required>
+    </div>
+    <div>
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" [(ngModel)]="tarjeta.tipo" name="tipo" required>
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="DEBITO">Débito</option>
+        <option value="CREDITO">Crédito</option>
+      </select>
+    </div>
+    <div>
+      <label for="telefono">Teléfono:</label>
+      <input type="number" id="telefono" [(ngModel)]="tarjeta.telefono" name="telefono" [ngClass]="{'invalid':tarjeta.telefono&&tarjeta.telefono.toString().length<10}" required>
+    </div>
+    <button type="submit">Crear Tarjeta</button>
+  </form>
+  
+  <form class="form">
+    <h3>Response</h3>
+    <div>
+      <label for="pan">PAN:</label>
+      <input type="text" id="pan" [(ngModel)]="response.pan" name="pan" [disabled]="true">
+    </div>
+    <div>
+      <label for="numValidacion">Número Validación:</label>
+      <input type="text" id="numValidacion" [(ngModel)]="response.numValidacion" name="numValidacion" [disabled]="true">
+    </div>
+    <div>
+      <label for="codigo">Codigo:</label>
+      <input type="text" id="codigo" [(ngModel)]="response.codigo" name="codigo" [disabled]="true">
+    </div>
+    <div>
+      <label for="mensaje">Mensaje:</label>
+      <input type="text" id="mensaje" [(ngModel)]="response.mensaje" name="mensaje" [disabled]="true">
+    </div>
+  </form>
+  </div>
+</div>
