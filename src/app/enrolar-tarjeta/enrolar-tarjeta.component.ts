@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { enrolarTarjetaI } from '../interfaces/interfaces.interface';
 import { ControllerService } from '../service/controller.service';
@@ -16,8 +17,13 @@ export class EnrolarTarjetaComponent {
   public response:enrolarTarjetaI = { }
 
   public enrolarTarjeta(){
-    this.servicio.enrolarTarjeta(this.request).subscribe(response => {
-      this.response = response;
-    });
+    this.servicio.enrolarTarjeta(this.request).subscribe(
+      (response: enrolarTarjetaI) => {
+        this.response = response;
+      },
+      (error: HttpErrorResponse) => {
+        this.response = error.error;
+      }
+    );
   }
 }

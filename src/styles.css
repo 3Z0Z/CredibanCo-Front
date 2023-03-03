@@ -47,3 +47,6 @@ h3{
 .form label{
     margin-right: 0.5rem;
 }
+.form > div > input{
+    min-width: 100%;
+}

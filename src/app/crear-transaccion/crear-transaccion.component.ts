@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { crearTransaccionI } from '../interfaces/interfaces.interface';
 import { ControllerService } from '../service/controller.service';
@@ -16,8 +17,13 @@ export class CrearTransaccionComponent {
   public response:crearTransaccionI = { }
 
   public crearTransaccion(){
-    this.servicio.crearTransaccion(this.request).subscribe(response => {
-      this.response = response;
-    });
+    this.servicio.crearTransaccion(this.request).subscribe(
+      (response: crearTransaccionI) => {
+        this.response = response;
+      },
+      (error: HttpErrorResponse) => {
+        this.response = error.error;
+      }
+    );
   }
 }

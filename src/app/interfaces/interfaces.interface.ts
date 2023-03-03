@@ -62,7 +62,7 @@ export interface crearTransaccionI{
 
 export interface anularTransaccionI{
     pan?:string,
-    totalCompra?:number,
+    totalCompra?:string,
     numReferencia?:string,
     codigo?:string,
     mensaje?:string

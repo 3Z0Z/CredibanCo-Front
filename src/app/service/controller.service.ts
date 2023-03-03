@@ -26,7 +26,7 @@ export class ControllerService {
   }
 
   public eliminarTarjeta(request:eliminarTarjetaI):Observable<eliminarTarjetaI>{
-    return this.http.delete(`${this.servicioUrl}/eliminar?${request.pan}&${request.numValidacion}&${request.panConfirm}`);
+    return this.http.delete(`${this.servicioUrl}/eliminar/${request.pan}/${request.numValidacion}/${request.panConfirm}`);
   }
 
   public crearTransaccion(request:crearTransaccionI):Observable<crearTransaccionI>{

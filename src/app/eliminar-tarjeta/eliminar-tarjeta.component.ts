@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { eliminarTarjetaI } from '../interfaces/interfaces.interface';
 import { ControllerService } from '../service/controller.service';
@@ -16,8 +17,13 @@ export class EliminarTarjetaComponent {
   public response:eliminarTarjetaI = { }
 
   public eliminarTarjeta(){
-    this.servicio.eliminarTarjeta(this.request).subscribe(response => {
-      this.response = response;
-    });
+    this.servicio.eliminarTarjeta(this.request).subscribe(
+      (response: eliminarTarjetaI) => {
+        this.response = response;
+      },
+      (error: HttpErrorResponse) => {
+        this.response = error.error;
+      }
+    );
   }
 }

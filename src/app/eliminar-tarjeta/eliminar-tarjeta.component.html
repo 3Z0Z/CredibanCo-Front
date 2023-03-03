@@ -5,7 +5,7 @@
       <h3>Request</h3>
       <div>
         <label for="pan">PAN:</label>
-        <input type="number" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
+        <input type="text" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
       </div>
       <div>
         <label for="numValidacion">Número de Validación:</label>

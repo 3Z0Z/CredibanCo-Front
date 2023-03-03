@@ -5,13 +5,13 @@
     <h3>Request</h3>
     <div>
       <label for="pan">PAN:</label>
-      <input type="number" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
+      <input type="text" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
     </div>
     <div>
-      <label for="nombre">Numero de validacion:</label>
-      <input type="number" id="nombre" [(ngModel)]="request.numValidacion" name="nombre" [ngClass]="{'invalid':request.numValidacion&&(request.numValidacion.toString().length<1||request.numValidacion.toString().length>100)}" required>
+      <label for="numValidacion">Número de validación:</label>
+      <input type="number" id="numValidacion" [(ngModel)]="request.numValidacion" name="numValidacion" [ngClass]="{'invalid':request.numValidacion&&(request.numValidacion.toString().length<1||request.numValidacion.toString().length>100)}" required>
     </div>
-    <button type="submit">Crear Tarjeta</button>
+    <button type="submit">Enrolar Tarjeta</button>
   </form>
 
   <form class="form">
@@ -21,7 +21,7 @@
       <input type="text" id="pan" [(ngModel)]="response.pan" name="pan" [disabled]="true">
     </div>
     <div>
-      <label for="codigo">Codigo:</label>
+      <label for="codigo">Código:</label>
       <input type="text" id="codigo" [(ngModel)]="response.codigo" name="codigo" [disabled]="true">
     </div>
     <div>

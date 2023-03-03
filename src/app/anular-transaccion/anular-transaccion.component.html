@@ -5,7 +5,7 @@
     <h3>Request</h3>
     <div>
       <label for="pan">PAN:</label>
-      <input type="number" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
+      <input type="text" id="pan" [(ngModel)]="request.pan" name="pan" [ngClass]="{'invalid':request.pan&&(request.pan.toString().length<16||request.pan.toString().length>19)}" required>
     </div>
     <div>
       <label for="numReferencia">Número de referencia:</label>
@@ -13,7 +13,7 @@
     </div>
     <div>
       <label for="totalCompra">Total Compra:</label>
-      <input type="number" id="totalCompra" [(ngModel)]="request.totalCompra" name="totalCompra" required>
+      <input type="text" id="totalCompra" [(ngModel)]="request.totalCompra" name="totalCompra" required>
     </div>
     <button type="submit">Anular Transacción</button>
   </form>
